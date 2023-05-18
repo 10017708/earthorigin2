@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Earth - Origin</title>
+    <link rel="icon" type="image/png" href="images/favicon.png">
+
+</head>
+<body>
+    
+
+    <div class="story-container">
+        <div class="picture-holder">
+        </div>
+        <div class="menu">
+            <div class="storyTextDiv">
+                <p class="dialogue">
+                    <b>To Myself: </b>Oh no! My planet failed the test.<br>
+                    <b>*knock knock*</b>
+                </p>
+            </div>
+            <div class="choiceDiv" >
+                <button id="choice1" class="choiceButton" onclick="makeChoice(1)">
+                    Ignore Door and Try Planet 1
+                </button>
+               
+                <button id="choice2" class="choiceButton" onclick="makeChoice(2)">
+                    Answer Door
+                </button>
+               
+            </div> 
+        </div>
+        <img src="images/playbutton.png" onclick="playAudio()" class="audioPlayer">
+
+    </div>
+</body>
+<script>
+    var imageSource = "images/planet2.png"
+    var audio = new Audio('audio/planetfailed.wav');
+
+    document.getElementsByClassName("picture-holder")[0].style.backgroundImage = "url(" + imageSource + ")";
+
+
+
+    audio.play();
+
+
+    function playAudio(){
+        audio.play();
+    }
+
+    function makeChoice(choice){
+        if(choice === 1){
+            window.location.href = 'fired.html';
+        }
+        if(choice === 2){
+            window.location.href = 'answerdoor.html';
+        }
+    }
+</script>
+<style>
+    .picture-holder {
+      background-repeat:no-repeat;
+      background-size:contain;
+      background-position: center;
+    }
+</style>
+</html>
